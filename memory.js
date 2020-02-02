@@ -1,48 +1,64 @@
+// Author: Tebooh Romeo Lekalo
+
 const cards = document.querySelectorAll('.card');
 
-function flipCard(){
-    this.classList.toggle('flip');
-    // console.log('I was clicked');
-    // console.log(this);
+let flipped = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard == true) {
+    // try changing the lockBoard boolean metgid after this..
+    return;
+  }
+  this.classList.add('flip');
+
+  if (!hasflipped) {
+    hasflipped = true; // was true;
+    firstCard = this;
+
+    return;
+  } else {
+    //hasflipped = false;// Changed this one to the reset Board;
+    resetBoard();
+    secondCard = this;
+
+    cardMatch();
+  }
 }
 
-cards.forEach(myCards => myCards.addEventListener('click', flipCard));
+function cardMatch() {
+  let matched = firstCard.dataset.framework === secondCard.dataset.framework;
+  matched ? disableCards() : notflipped();
+}
 
 
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
 
+  resetBoard();
+}
 
+function notFlipped() {
+  lockBoard = true;
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
 
+    resetBoard();
+  }, 500);
+}
 
+function resetBoard(){
+    [hasflipped, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
 
-
-
-
-
-
-//Making sure the text 'Memory game appears on the html'
-//let text = document.createElement('div'); //creates a div
-// text.innerHTML = 'memory game';
-// document.body.appendChild(text);
-
-// Creating another div for the images
-// let images = document.createElement('div');
-// document.body.appendChild(images)
-
-// let pic = document.createElement('div');
-// document.body.appendChild(pic)
-
-// Looping through all the pictures in th media folder
-// And printing each one of them...
-// let pics = ''
-
-// for(let i = 1; i <= 8; i++){
-//     if(i == 4){
-//         pics += '<br>'
-//     }
-//     pics += '<img src="./media/'+ i +'.png"></img>';
-// }
-
-
-// images.innerHTML = pics;
-
-// Create a function for image flipping..
+(function suffle() {
+  cards.forEach((myCards) => {
+    let randomPosition = Math.floor(Math.random() * 12);
+    myCards.getElementsByClassName.order = randomPosition;
+  });
+})();
+cards.forEach((myCards) => myCards.addEventListener('click', flipCard));

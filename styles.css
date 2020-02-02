@@ -1,4 +1,4 @@
-/* Romeo Style */
+/* Romeo Styles */
 
 * {
     padding: 0;
@@ -40,6 +40,7 @@ body {
 
 .card img {
     background: white;
+    margin-left: 10px;
 }
 
 .card.flip {
@@ -55,4 +56,3 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
-
