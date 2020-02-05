@@ -75,7 +75,7 @@ h1{
 }
 
 /* This is responive to only small sized devices */
-@media only screen and (max-width: 345px){
+@media only screen and (max-width: 720px){
     .display {
         width: 70%;
         height: 40%;
