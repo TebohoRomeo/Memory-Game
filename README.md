@@ -1,3 +1,5 @@
 # Memory-Game
 
-OTHER THAN BIG SIZED SCREEN, THIS GAME IS ENJOYABLE ON 320PX TO 345PX ONLY
+tebohoromeo.github.io/Memory-Game/
+
+Not Resposive
