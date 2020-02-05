@@ -9,21 +9,25 @@ body {
     background: url('./media/alien-background.jpg') no-repeat 0;
     color: #edeae5;
     height: 100vh;
-    /* display: flex; */
 }
+
+h1{
+    margin-left: 30px;
+    text-align: center;
+}
+
 
 
 .display {
-    width: 30%;
+    width: 35%;
     height: 40%;
-    margin: 11px;
+    margin-left: 345px;
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    /* perspective: 1000px;Added this one */
 }
 .card {
     background: #1a1a1a;
-    /* float: left; */
     width: 25%;
     height: 33.33%;
     padding: 6px;
@@ -40,7 +44,7 @@ body {
 
 .card img {
     background: white;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .card.flip {
@@ -55,4 +59,56 @@ body {
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+.btn {
+    background: #1a1a1a;
+    color: #edeae5;
+    width: 150px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 450px;
+}
+.footer {
+    text-align: center;
+    padding-top: 190px;
+}
+
+/* This is responive to only small sized devices */
+@media only screen and (max-width: 345px){
+    .display {
+        width: 70%;
+        height: 40%;
+        margin: 50px;
+        margin-top: 30px;
+    }
+
+    .card {
+        padding: 0;
+        padding-top: 8px;
+    }
+
+    .card img {
+        width: 40px;
+        height: 60px;
+        padding: 5px;
+    }
+    
+    h1{
+        text-align: center;
+    }
+
+    .btn {
+        background: #1a1a1a;
+        color: #edeae5;
+        width: 70px;
+        height: 30px;
+        margin-top: 0;
+        margin-left: 120px;
+    }
+
+    .footer {
+        text-align: center;
+        padding-top: 130px;
+    }
 }
