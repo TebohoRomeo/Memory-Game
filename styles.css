@@ -19,7 +19,7 @@ body {
     margin: 11px;
     display: flex;
     flex-wrap: wrap;
-    perspective: 1000px;/* Added this one */
+    /* perspective: 1000px;Added this one */
 }
 .card {
     background: #1a1a1a;
@@ -30,7 +30,7 @@ body {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .2s;
+    transition: transform .5s;
 }
 
 .card:active{

@@ -2,63 +2,62 @@
 
 const cards = document.querySelectorAll('.card');
 
-let flipped = false;
+let hasflipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-  if (lockBoard == true) {
-    // try changing the lockBoard boolean metgid after this..
-    return;
-  }
+  if (lockBoard) return;
+
   this.classList.add('flip');
 
   if (!hasflipped) {
-    hasflipped = true; // was true;
+    hasflipped = true;
     firstCard = this;
 
     return;
-  } else {
-    //hasflipped = false;// Changed this one to the reset Board;
+  } 
+    hasflipped = false;
     resetBoard();
     secondCard = this;
 
     cardMatch();
-  }
+
 }
 
 function cardMatch() {
-  let matched = firstCard.dataset.framework === secondCard.dataset.framework;
-  matched ? disableCards() : notflipped();
+  if (firstCard.dataset.name === secondCard.dataset.name){
+    return disableCards();
+  } else {
+
+    return notFlipped();
+  }
 }
 
 
 function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
 
-  resetBoard();
 }
 
 function notFlipped() {
-  lockBoard = true;
+  lockBoard = false;
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
-    resetBoard();
   }, 500);
 }
 
 function resetBoard(){
-    [hasflipped, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
+    hasflipped, lockBoard = false, false;
+    firstCard, secondCard = null, null;
 }
 
 (function suffle() {
-  cards.forEach((myCards) => {
+  cards.forEach(myCards => {
     let randomPosition = Math.floor(Math.random() * 12);
-    myCards.getElementsByClassName.order = randomPosition;
+    myCards.style.order = randomPosition;
   });
 })();
 cards.forEach((myCards) => myCards.addEventListener('click', flipCard));
