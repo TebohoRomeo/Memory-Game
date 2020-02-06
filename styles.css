@@ -19,19 +19,15 @@ h1{
 
 
 .display {
+    background: #1a1a1a;
     width: 35%;
-    height: 40%;
-    margin-left: 345px;
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
+    height: 42%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 .card {
-    background: #1a1a1a;
-    width: 25%;
-    height: 33.33%;
     padding: 6px;
-    position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
@@ -44,7 +40,8 @@ h1{
 
 .card img {
     background: white;
-    margin-left: 8px;
+    padding: 6px;
+
 }
 
 .card.flip {
@@ -72,83 +69,4 @@ h1{
 .footer {
     text-align: center;
     padding-top: 190px;
-}
-
-/* This is responive to only small sized devices */
-@media only screen and (max-width: 345px){
-    .display {
-        width: 70%;
-        height: 40%;
-        margin: 50px;
-        margin-top: 30px;
-    }
-
-    .card {
-        padding: 0;
-        padding-top: 8px;
-    }
-
-    .card img {
-        width: 40px;
-        height: 60px;
-        padding: 5px;
-    }
-    
-    h1{
-        text-align: center;
-    }
-
-    .btn {
-        background: #1a1a1a;
-        color: #edeae5;
-        width: 70px;
-        height: 30px;
-        margin-top: 0;
-        margin-left: 120px;
-    }
-
-    .footer {
-        text-align: center;
-        padding-top: 130px;
-    }
-}
-
-@media screen and (min-width: 100%){
-    .display {
-        width: 50%;
-        height: 60%;
-        margin: 50px;
-        margin-top: 30px;
-    }
-
-    .card {
-        padding: 0;
-        padding-top: 8px;
-        padding-left: 6px;
-    }
-
-    .card img {
-        width: 60px;
-        height: 80px;
-        padding: 6px;
-        
-    }
-    
-    h1{
-        text-align: center;
-    }
-
-    .btn {
-        background: #1a1a1a;
-        color: #edeae5;
-        width: 70px;
-        height: 30px;
-        margin-top: 0;
-        margin-left: 120px;
-    }
-
-    .footer {
-        text-align: center;
-        padding-top: 130px;
-    }
 }
